@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/toolbar_shadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:padding="10dp"
+            android:text="@string/login_welcome_blurb"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+        android:selectAllOnFocus="true"
+        android:inputType="textPassword" />
+
+        <LinearLayout
+            android:id="@+id/server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        android:visibility="visible"
+        android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+        >
+
+            <CheckBox
+                android:id="@+id/checkbox_usezulip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:text="@string/use_another_server"
+            android:checked="true"
+                android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                android:gravity="end|center_vertical"
+            android:layout_gravity="end"
+            />
+
+            <EditText
+                android:id="@+id/server_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/server_domain"
+                android:inputType="textUri"
+                android:selectAllOnFocus="true"
+                android:visibility="gone"
+            tools:visibility="visible"
+            />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/zulip_login"
+            style="android:buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_button" />
+
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_marginTop="28dp" >
+    </com.google.android.gms.common.SignInButton>
+
+        <TextView
+            android:id="@+id/local_server_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingTop="16dp"
+            android:text="@string/local_server"
+            android:textColor="#ff0099cc" />
+
+        <TextView
+            android:id="@+id/legal_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:text="@string/legal"
+            android:textColor="#ff0099cc" />
+    </LinearLayout>
+</LinearLayout>
